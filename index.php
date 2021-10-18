@@ -1,16 +1,21 @@
 <?php
 require 'Wilder.php';
-$alex = new Wilder('Joffrey');
+require 'WilderFiveMonth.php';
+require 'Alternant.php';
+require 'Room.php';
+namespace App;
 
-$alex->setLanguage('php');
+use App\WilderFiveMonth as Genius;
+use App\Wilder;
+use App\Alternant;
 
-for ($i=0; $i<= 10; $i++) {
-    $alex->study();
-}
-if ($alex->isDead()) {
-    echo 'GAME OVER';
-}
-$alex->drinkCoffee();
+$alex = new Genius('Alex');
+$jonathan = new Alternant('Jonathan', 'STOIK');
 
+$alex->study();
+$jonathan->study();
 
-var_dump($alex);
+$room = new Room();
+$room->setWilder($alex);
+
+var_dump(Wilder::class);

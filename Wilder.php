@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Wilder
 {
     public const AUTHORIZED_LANGUAGES = ['php', 'js'];
@@ -10,7 +12,7 @@ class Wilder
 
     private string $language;
 
-    private int $tireness = 0;
+    protected int $tireness = 0;
 
     public function __construct(string $name)
     {
